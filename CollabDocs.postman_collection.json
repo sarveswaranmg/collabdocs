@@ -1,0 +1,837 @@
+{
+  "info": {
+    "_exporter_id": "15807285",
+    "_postman_id": "674c13a1-ea29-4aff-97df-cc75b774095b",
+    "name": "CollabDocs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "name": "CreateUser",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"username\": \"demo_user\",\n    \"first_name\": \"Demo\",\n    \"last_name\": \"User\",\n    \"email\": \"demo@example.com\",\n    \"phone\": \"9876543210\",\n    \"password\": \"password@123\"\n  }"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "users",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/users/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetUserById",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kww}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "users",
+                "7e34db2b-1023-462a-97ad-338706963eab"
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/users/7e34db2b-1023-462a-97ad-338706963eab"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "User"
+    },
+    {
+      "item": [
+        {
+          "name": "Create Workspace",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\"name\":\"Engineering\"}"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{vault:bearer_token_0h5i}}"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "workspaces",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/workspaces/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkspaceById",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kww}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "workspaces",
+                "49fd0bd1-dea0-4faa-8f4a-e5c53c565726"
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/workspaces/49fd0bd1-dea0-4faa-8f4a-e5c53c565726"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AddMembersToWorkspace",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"user\":\"7e34db2b-1023-462a-97ad-338706963eab\",\n    \"role\":\"editor\"\n}"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kww}}"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "workspaces",
+                "49fd0bd1-dea0-4faa-8f4a-e5c53c565726",
+                "members",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/workspaces/49fd0bd1-dea0-4faa-8f4a-e5c53c565726/members/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ListOfMembers",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_1b7m}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "workspaces",
+                "49fd0bd1-dea0-4faa-8f4a-e5c53c565726",
+                "members",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/workspaces/49fd0bd1-dea0-4faa-8f4a-e5c53c565726/members/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MembersSummary",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_1b7m}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "workspaces",
+                "49fd0bd1-dea0-4faa-8f4a-e5c53c565726",
+                "summary",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "query": [
+                {
+                  "key": null,
+                  "value": ""
+                }
+              ],
+              "raw": "http://127.0.0.1:8000/api/workspaces/49fd0bd1-dea0-4faa-8f4a-e5c53c565726/summary/?"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Workspaces"
+    },
+    {
+      "item": [
+        {
+          "name": "ListDocumentVersions",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_19fd}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                "6b1775b5-24df-4815-a7f9-45a225897ed8",
+                "versions",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/documents/6b1775b5-24df-4815-a7f9-45a225897ed8/versions/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateADocument",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"title\":\"Project Plan\",\n    \"content\":\"Initial content\",\n    \"workspace\":\"49fd0bd1-dea0-4faa-8f4a-e5c53c565726\",\n    \"status\":\"draft\"\n}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_1b7m}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/documents/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateADocument",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\"title\":\"Updated Project Plan\",\"content\":\"Updated content v2\",\"workspace\":\"49fd0bd1-dea0-4faa-8f4a-e5c53c565726\",\"status\":\"published\"}"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_18po}}"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                "6b1775b5-24df-4815-a7f9-45a225897ed8",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/documents/6b1775b5-24df-4815-a7f9-45a225897ed8/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ListDocumentsWithFilter",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_18po}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "query": [
+                {
+                  "key": "workspace",
+                  "value": "49fd0bd1-dea0-4faa-8f4a-e5c53c565726"
+                },
+                {
+                  "key": "status",
+                  "value": "draft,published"
+                },
+                {
+                  "key": "search",
+                  "value": "Project"
+                },
+                {
+                  "key": "title",
+                  "value": "Plan"
+                }
+              ],
+              "raw": "http://127.0.0.1:8000/api/documents/?workspace=49fd0bd1-dea0-4faa-8f4a-e5c53c565726&status=draft,published&search=Project&title=Plan"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DocumentStatistics",
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_19fd}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                "6b1775b5-24df-4815-a7f9-45a225897ed8",
+                "stats",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "query": [
+                {
+                  "disabled": true,
+                  "key": "",
+                  "value": ""
+                }
+              ],
+              "raw": "http://127.0.0.1:8000/api/documents/6b1775b5-24df-4815-a7f9-45a225897ed8/stats/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AddTagsTodocument",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"tag_ids\":[\"3917ca60-0900-490f-81f6-a0fc41125adc\"]\n}\n"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kcj}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "documents",
+                "6b1775b5-24df-4815-a7f9-45a225897ed8",
+                "tags",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/documents/6b1775b5-24df-4815-a7f9-45a225897ed8/tags/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateATag",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\"name\":\"python\"}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0ego}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "tags",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/tags/"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Documents"
+    },
+    {
+      "item": [
+        {
+          "name": "CreateAComment",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\"document\":\"6b1775b5-24df-4815-a7f9-45a225897ed8\",\"content\":\"Looks good!\",\"parent\":null}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kcj}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "comments",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/comments/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ListOfComments",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": ""
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0kcj}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "comments",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "query": [
+                {
+                  "key": "document",
+                  "value": "6b1775b5-24df-4815-a7f9-45a225897ed8"
+                }
+              ],
+              "raw": "http://127.0.0.1:8000/api/comments/?document=6b1775b5-24df-4815-a7f9-45a225897ed8"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Comments"
+    },
+    {
+      "item": [
+        {
+          "name": "ListAuditLogs",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"securepass123\"\n}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0ego}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "audit-logs",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "raw": "http://127.0.0.1:8000/api/audit-logs/"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "FilterAuditsByDate",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"securepass123\"\n}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0ego}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "path": [
+                "api",
+                "audit-logs",
+                ""
+              ],
+              "port": "8000",
+              "protocol": "http",
+              "query": [
+                {
+                  "key": "from",
+                  "value": "2026-01-01T00:00:00Z"
+                },
+                {
+                  "key": "to",
+                  "value": "2026-12-31T23:59:59Z"
+                }
+              ],
+              "raw": "http://127.0.0.1:8000/api/audit-logs/?from=2026-01-01T00:00:00Z&to=2026-12-31T23:59:59Z"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "AuditLogs"
+    },
+    {
+      "name": "CreateNewAcessToken",
+      "request": {
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n    \"refresh\": \"{{json_web_token_1bso}}\"\n}"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "url": {
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "path": [
+            "api",
+            "token",
+            "refresh",
+            ""
+          ],
+          "port": "8000",
+          "protocol": "http",
+          "raw": "http://127.0.0.1:8000/api/token/refresh/"
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_1bso",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0kww",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_05cp",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_18po",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_18dv",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_1b7m",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1183",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_19fd",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_07kf",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0kcj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_032s",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0ego",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0zi4",
+      "secret": true
+    }
+  ]
+}
